@@ -1,0 +1,128 @@
+/* general  Nexus 5 */
+.container {
+	width: 100%;
+}
+
+/* header 部分 */
+header {
+	display: flex;
+	height: 120px;
+}
+
+header .logo-div, header .logo-text {
+	padding: 0;
+}
+
+header .logo-div {
+	width: 40%;
+}
+
+header .logo-text {
+	width: 60%;
+	/*padding-top: 20px;*/
+}
+
+header img.logo {
+	height: 100%;
+	width: 100%;
+	margin-left: -20px;
+}
+
+hr {
+	height: 3px;
+	background-color: #7d97ad;
+}
+
+/* 中间图片内容 */
+img.content {
+	width: 100%;
+	/*height: 300px; */
+	/* 去掉固定高度是为了避免图片放大或缩小失真 */
+}
+
+/* 作品集标题 */
+.title {
+	color: #7d97ad;
+	padding-left: 10px;
+}
+
+/* 作品 */
+div.works {
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 20px;
+}
+
+.works .work {
+	padding: 0; 
+	width: 100%;
+	margin-bottom: 14px;
+}
+
+.work img {
+	height: 200px;
+	/* 这里不去掉固定高度是因为3张图片高度不一样，自适应的话就会出现高度不统一的问题 */
+	width: 100%;
+}
+
+/*media query*/
+
+/* ipad */
+@media screen and (min-width: 361px) {
+	div.works {
+		flex-direction: row;
+		flex-wrap: wrap;
+		flex-flow: row wrap;
+	}
+
+	header img.logo {
+		margin-left: -60px;
+	}
+	
+	/* 改变作品集宽度，且指定间隔排版会看起来舒服点 */
+	.works .work {
+		width: 47.5%;
+	}
+	
+	.works .work-1 {
+		margin-right: 5%;
+	}
+}
+
+/* desktop */
+@media screen and (min-width: 769px) {
+	.container {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	header img.logo {
+		margin-left: -60px;
+	}
+
+	img.content {
+		width: 100%;
+		/*height: 400px;*/
+		/* 去掉固定高度是为了避免图片放大或缩小失真 */
+	}
+
+	div.works {
+		/*flex-direction: row;
+		flex-wrap: no-wrap;*/
+		flex-flow: row nowrap;
+		justify-content: space-between;
+	}
+
+	.works .work {
+		width: 33.3%;
+	}
+
+	.works .work-1 {
+		padding-right: 20px;
+	}
+
+	.works .work-3 {
+		padding-left: 20px;
+	} 
+}
